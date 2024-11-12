@@ -42,10 +42,6 @@ frontend http-in
     mode http
     default_backend webservers
 
-frontend http-frontend
-        bind *:443 ssl crt /etc/letsencrypt/live/www.techiekid.tech/techiekid.pem
-        mode http
-        default_backend webservers
 backend webservers
     balance roundrobin
     server web-01 34.230.88.74:80 check
